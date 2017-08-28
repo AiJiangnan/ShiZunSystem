@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mj.cwj.notice.mapper.NoticeMapper">
+	<resultMap type="com.mj.ajn.system.pojo.Dept" id="dMap">
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<collection property="elist" javaType="java.util.List" 
+
+ofType="com.mj.ajn.system.pojo.Emp">
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		</collection>
+	</resultMap>
+	<select id="selAllDept" resultMap="dMap">
+		select dept.*,emp.name from dept,emp where dept.id=emp.did;
+	
+	</select>
+</mapper>
+
+

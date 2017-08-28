@@ -1,0 +1,89 @@
+世尊家具综合管理系统包目录结构（码匠组）
+组员：杨泽新、叶猛、艾江南、陈万军
+组长：杨泽新
+
+└─com
+    └─mj
+        ├─ajn
+        │  ├─knowledge
+        │  │  ├─controller
+        │  │  ├─interceptor
+        │  │  ├─mapper
+        │  │  ├─pojo
+        │  │  ├─service
+        │  │  │  └─impl
+        │  │  └─test
+        │  ├─personnel
+        │  │  ├─controller
+        │  │  ├─interceptor
+        │  │  ├─mapper
+        │  │  ├─pojo
+        │  │  ├─service
+        │  │  │  └─impl
+        │  │  └─test
+        │  ├─project
+        │  │  ├─controller
+        │  │  ├─interceptor
+        │  │  ├─mapper
+        │  │  ├─pojo
+        │  │  ├─service
+        │  │  │  └─impl
+        │  │  └─test
+        │  ├─sale
+        │  │  ├─controller
+        │  │  ├─interceptor
+        │  │  ├─mapper
+        │  │  ├─pojo
+        │  │  ├─service
+        │  │  │  └─impl
+        │  │  └─test
+        │  ├─statistics
+        │  │  ├─controller
+        │  │  ├─interceptor
+        │  │  ├─mapper
+        │  │  ├─pojo
+        │  │  ├─service
+        │  │  │  └─impl
+        │  │  └─test
+        │  └─system
+        │      ├─controller
+        │      ├─interceptor
+        │      ├─mapper
+        │      ├─pojo
+        │      ├─service
+        │      │  └─impl
+        │      └─test
+        ├─commen
+        │  ├─interceptor
+        │  └─util
+        ├─cwj
+        │  └─notice
+        │      ├─controller
+        │      ├─interceptor
+        │      ├─mapper
+        │      ├─pojo
+        │      ├─service
+        │      │  └─impl
+        │      └─test
+        ├─ym
+        │  └─mission
+        │      ├─controller
+        │      ├─interceptor
+        │      ├─mapper
+        │      ├─pojo
+        │      ├─service
+        │      │  └─impl
+        │      └─test
+        └─yzx
+            └─production
+                ├─controller
+                ├─interceptor
+                ├─mapper
+                ├─pojo
+                ├─service
+                │  └─impl
+                └─test
+
+applicationContext.xml
+jdbc.properties
+springmvc.xml

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.mj.ym.mission.mapper.TaskMapper">
+<select id="selByPage"  resultType="com.mj.ym.mission.pojo.Task" >
+ SELECT t.*,e.name pname from task t ,emp e
+ <where>
+ AND t.pid = e.id
+<if test="tname!=null and tname!=''">
+ <bind name="tname" value="'%'+tname+'%'"/>
+ and t.name like #{tname} 
+</if>
+</where>
+ORDER BY `level`,timeto LIMIT #{0},#{1};
+</select>
+<select id="selCountByPageInfo" resultType="long" parameterType="String">
+SELECT count(*) from task
+<where>
+<if test="tname!=null and tname!=''">
+<bind name="tname" value="'%'+tname+'%'"/>
+ and name like #{tname}
+</if>
+</where>
+</select>
+<select id="selCountByDelay" resultType="long" parameterType="String">
+SELECT count(*) from delay
+<where>
+<if test="tname!=null and tname!=''">
+<bind name="tname" value="'%'+tname+'%'"/>
+ and name like #{tname}
+</if>
+</where>
+</select>
+<resultMap type="com.mj.ym.mission.pojo.DelayTask" id="delay">
+<result column="tid" property="tid"/>
+<result column="rid" property="rid"/> 
+<association property="emp" select="selEmpByTid" column="tid"></association>
+<association property="role" select="selRoleByRid" column="rid"></association>
+</resultMap>
+<select id="selDelayTask" resultMap="delay">
+select * from delay
+<where>
+<if test="tname!=null and tname!=''">
+ <bind name="tname" value="'%'+tname+'%'"/>
+ and reson like #{tname} 
+</if>
+</where>
+ORDER BY timedelay LIMIT #{0},#{1};
+</select>
+</mapper>

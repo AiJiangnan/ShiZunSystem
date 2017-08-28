@@ -1,0 +1,11 @@
+模块包名
+模块名				包名					负责人
+- 人事行政管理			personnel
+- 系统公告			notice				陈万军
+- 知识管理			knowledge
+- 任务管理			mission				叶猛
+- 销售管理			sale
+- 项目管理			project
+- 统计分析			statistics
+- 系统设置			system				艾江南
+- 产品资料管理			production			杨泽新

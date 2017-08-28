@@ -1,0 +1,139 @@
+命名规范
+- 类名：大驼峰
+- 方法名：小驼峰
+- 属性名：和数据库字段名一样
+
+数据库表字段
+
+1.员工表：emp
+- ID：id
+- 员工姓名：name
+- 员工密码：pwd
+- 员工性别：gender
+- 部门ID：did（外）
+
+2.部门表：dept
+- ID：id
+- 部门编号：no
+- 部门名称：name
+- 部门简称：sname
+- 备注：remark
+
+3.菜单表：menu
+- ID：id
+- 菜单名称：name
+- 父菜单ID：pid
+- 排序：sort
+- 是否显示：show
+
+3.角色表：role
+- ID：id
+- 排序ID：sid
+- 角色名称：name
+- 备注：remark
+
+4.角色-员工表：role_emp
+- ID：id
+- 角色ID：rid（外）
+- 员工ID：eid（外）
+
+5.角色-菜单表：role_menu
+- ID：id
+- 角色ID：rid（外）
+- 菜单ID：mid（外）
+
+6.自定义功能表：custom
+- ID：id
+- 标题：name
+- 链接：url
+- 图标：icon
+- 备注：remark
+
+7.审批文档流程管理：flow
+- ID：id
+- 审批编号：no
+- 审批名称审批流程：name
+- 相关文档：docs
+- 第一层审批：role1（rid外）
+- 第二层审批：role2（rid外）
+- 第三层审批：role3（rid外）
+- 添加于：from
+- 是否特殊：special
+- 请假的天数和报销的金额最小值：mix
+- 请假的天数和报销的金额最大值：max
+- 备注：remark
+
+8.公告类别：noticeclass
+- ID：id
+- 公告类别名称：name
+- 备注：remark
+
+9.公告：notice
+- ID：id
+- 公告标题：name
+- 公告类别：nid（外）
+- 有效期开始（发布时间）：datefrom
+- 有效期结束：dateto
+- 公告内容：content
+- 查看部门：did（外）
+- 浏览时间：date
+- 浏览人：eid（外）
+- 浏览次数：count
+
+10.部门-公告表：dept_notice
+- ID：id
+- 公告ID：nid（外）
+- 部门ID：did（外）
+
+11.员工-公告表：emp_notice
+- ID：id
+- 公告ID：nid（外）
+- 员工ID：eid（外）
+
+12.产品系列表：productset
+- 产品系列ID：id
+- 产品系列名称：name
+- 备注：remark
+
+13.产品风格表：productstyle
+- 产品风格ID:id
+- 产品风格名称：name
+- 备注：remark
+
+14.产品类别表：productclass
+- 产品类别ID:id
+- 产品类别名称：name
+- 备注：remark
+
+15.产品规格表：productsize
+- 产品规格ID :id
+- 产品规格：name
+- 备注：remark
+
+16.产品表：product
+- 产品ID：id
+- 产品型号：no
+- 产品名称：name
+- 产品图片：picture
+- 产品类别：cid（外）
+- 产品系别：xid(外)
+- 产品风格：sid（外）
+- 产品规格：zid（外）
+- 产品材质：material
+- 产品产地：location
+- 产品单价：price
+- 产品数量：number
+- 产品金额：total
+- 进口家具在途：send
+- 备注：remark
+
+17.收藏夹管理表：favorite
+- 收藏夹信息ID：id
+- 产品ID：pid（外）
+- 用户ID：uid（外）
+
+
+
+
+
+

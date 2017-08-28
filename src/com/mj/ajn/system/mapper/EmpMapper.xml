@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mj.ajn.system.mapper.EmpMapper">
+	<resultMap type="com.mj.ajn.system.pojo.Emp" id="empMap">
+		<id column="id" property="id"/>
+		<collection property="role" select="selRoleById" column="id" ofType="com.mj.ajn.system.pojo.Role"></collection>
+	</resultMap>
+	<select id="selAll" resultMap="empMap">
+		select emp.*,dept.name dept from emp,dept where emp.did=dept.id
+	</select>
+	<select id="selPageAll" resultMap="empMap">
+		select emp.*,dept.name dept from emp,dept where emp.name like #{name} and emp.did=dept.id limit #{pageStart},#{pageSize}
+	</select>
+	<select id="selById" resultMap="empMap">
+		select emp.*,dept.name dept from emp,dept where emp.did=dept.id and emp.id=#{id}
+	</select>
+	<resultMap type="com.mj.ajn.system.pojo.Menu" id="menuMap">
+		<id column="id" property="id"></id>
+		<collection property="submenu" select="selMenuByEid" column="{eid=eid,pid=id}"></collection>
+	</resultMap>
+	<select id="selMenuByEid" resultMap="menuMap">
+		select distinct menu.*,#{eid} eid
+		from emp,role,role_emp,role_menu,menu
+		where emp.id=role_emp.eid
+		and role.id=role_emp.rid
+		and role_menu.rid=role.id
+		and menu.id=role_menu.mid
+		and emp.id=#{eid}
+		and menu.pid=#{pid}
+	</select>
+</mapper>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.mj.yzx.production.mapper.ProductMapper">
+  	<resultMap type="com.mj.yzx.production.pojo.Product" id="productMap">
+  		<id column="id" property="id"/>
+  		 <!-- private int cid;//产品类别
+	 	 private int xid;//产品系别
+		 private int sid;//产品风格
+		 private int zid;//产品规格 -->
+  		<result column="cid" property="cid"/>
+  		<result column="xid" property="xid"/>
+  		<result column="sid" property="sid"/>
+  		<result column="zid" property="zid"/>
+  		<association property="productClass" select="com.mj.yzx.production.mapper.ProductClassMapper.selByClassId" column="cid"></association>
+  		<association property="productSet" select="com.mj.yzx.production.mapper.ProductSetMapper.selBySetId" column="xid"></association>
+  		<association property="productStyle" select="com.mj.yzx.production.mapper.ProductStyleMapper.selByStyleId" column="sid"></association>
+  		<association property="productSize" select="com.mj.yzx.production.mapper.ProductSizeMapper.selBySizeId" column="zid"></association>
+  	</resultMap>
+  	<select id="selByPage" resultMap="productMap">
+  		select * from product where name like #{2} limit #{0},#{1}
+  	</select>
+  	<select id="selProductById" resultMap="productMap" parameterType="int">
+  		select * from product where id=#{0}
+  	</select>
+  </mapper>
