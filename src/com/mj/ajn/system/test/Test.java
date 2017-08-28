@@ -1,21 +1,5 @@
 package com.mj.ajn.system.test;
 
-import java.util.List;
-
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.mj.ajn.system.mapper.EmpMapper;
-import com.mj.ajn.system.mapper.MenuMapper;
-import com.mj.ajn.system.pojo.Emp;
-import com.mj.ajn.system.pojo.Role;
-import com.mj.ajn.system.service.MenuService;
-import com.mj.ajn.system.service.RoleService;
-import com.mj.ajn.system.service.impl.MenuServiceImpl;
-import com.mj.ajn.system.service.impl.RoleServiceImpl;
-import com.mj.cwj.notice.service.NoticeService;
-import com.mj.cwj.notice.service.impl.NoticeServiceImpl;
-
 /**
  * 示例代码，创建别的类后可删除
  * 
